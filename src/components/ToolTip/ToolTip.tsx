@@ -7,7 +7,7 @@ import {
   useInteractions,
 } from "@floating-ui/react";
 import { ReactNode, useRef, useState } from "react";
-import { cva } from "../../styled-system/css";
+import { cva } from "../../../styled-system/css";
 
 const ToolTipCVA = cva({
   base: {
@@ -29,9 +29,9 @@ const ToolTipCVA = cva({
       barbie: {
         color: "#FFFFFF",
         fill: "barbie.600",
+        fontFamily: "barbie",
         bgColor: "barbie.600",
         filter: "drop-shadow(0 0 2px var(--colors-barbie-500))",
-        fontFamily: "barbie",
       },
     },
   },
