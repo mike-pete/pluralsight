@@ -28,10 +28,10 @@ const ToolTipCVA = cva({
     visual: {
       barbie: {
         color: "#FFFFFF",
-        fill: "#E0218A",
-        fontWeight: "bold",
-        bgColor: "#E0218A",
-        filter: "drop-shadow(0 0 2px #f143ab)",
+        fill: "barbie.600",
+        bgColor: "barbie.600",
+        filter: "drop-shadow(0 0 2px var(--colors-barbie-500))",
+        fontFamily: "barbie",
       },
     },
   },
@@ -40,8 +40,6 @@ const ToolTipCVA = cva({
 const ARROW_WIDTH = 12;
 const ARROW_HEIGHT = 6;
 const GAP = 4;
-
-console.log(ToolTipCVA.variantMap["visual"]);
 
 const ToolTip: React.FC<{
   children: ReactNode;

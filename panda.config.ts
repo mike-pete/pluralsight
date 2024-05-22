@@ -19,9 +19,15 @@ export default defineConfig({
           100: { value: "#F3F3F8" },
           900: { value: "#130F25" },
         },
-        spacing: {
-          
-        }
+        pink: {
+          600: { value: "#e0218a" },
+          500: { value: "#f143ab" },
+        },
+      },
+      fonts: {
+        Bartex: {
+          value: "var(--font-bartex), sans-serif",
+        },
       },
     },
     semanticTokens: {
@@ -30,6 +36,13 @@ export default defineConfig({
           "surface-inverse": { value: "{colors.gray.100}" },
           "text-inverse": { value: "{colors.gray.900}" },
         },
+        barbie: {
+          600: { value: "{colors.pink.600}" },
+          500: { value: "{colors.pink.500}" },
+        },
+      },
+      fonts: {
+        barbie: { value: "{fonts.Bartex}" },
       },
     },
   },
