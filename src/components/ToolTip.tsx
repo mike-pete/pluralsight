@@ -14,9 +14,10 @@ const ToolTip: React.FC<{ children: ReactNode; popupContent: ReactNode }> = ({
   children,
   popupContent,
 }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const ARROW_HEIGHT = 8;
+  const ARROW_WIDTH = 12;
+  const ARROW_HEIGHT = 6;
   const GAP = 4;
 
   const arrowRef = useRef(null);
@@ -43,11 +44,17 @@ const ToolTip: React.FC<{ children: ReactNode; popupContent: ReactNode }> = ({
       {isOpen && (
         <div
           className={css({
+            display: "flex",
+            gap: 10,
+            justifyContent: "center",
+            alignContent: "flex-start",
+            alignItems: "flex-start",
             borderRadius: 4,
             p: 8,
             color: "neutral.text-inverse",
             bg: "neutral.surface-inverse",
             filter: "drop-shadow(0 0 2px rgba(0, 0, 0, 0.5))",
+            flexWrap: "wrap",
           })}
           ref={refs.setFloating}
           style={floatingStyles}
@@ -56,6 +63,7 @@ const ToolTip: React.FC<{ children: ReactNode; popupContent: ReactNode }> = ({
           <FloatingArrow
             ref={arrowRef}
             context={context}
+            width={ARROW_WIDTH}
             height={ARROW_HEIGHT}
             fill={token("colors.neutral.surface-inverse")}
           />
