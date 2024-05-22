@@ -21,13 +21,13 @@ const meta: Meta<typeof ToolTip> = {
         defaultValue: "This is a tooltip",
       },
     },
-    theme: {
-        control: {
-          type: "radio",
-          options: ["barbie"],
-        },
-        defaultValue: undefined,
+    visual: {
+      control: {
+        type: "radio",
+        options: ["barbie"],
       },
+      defaultValue: undefined,
+    },
   },
   tags: ["autodocs"],
   decorators: [
@@ -42,7 +42,7 @@ const meta: Meta<typeof ToolTip> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Primary: Story = {
   args: {
     children: "Hover over me!",
     popupContent: "This is a tooltip",
@@ -53,6 +53,6 @@ export const Barbie: Story = {
     args: {
       children: "Hover over me!",
       popupContent: "This is a tooltip",
-      theme: "barbie",
+      visual: "barbie",
     },
   };

@@ -7,7 +7,7 @@ import {
   useInteractions,
 } from "@floating-ui/react";
 import { ReactNode, useRef, useState } from "react";
-import { cva } from "../../../styled-system/css";
+import { cva, RecipeVariantProps } from "../../../styled-system/css";
 
 const ToolTipCVA = cva({
   base: {
@@ -41,11 +41,17 @@ const ARROW_WIDTH = 12;
 const ARROW_HEIGHT = 6;
 const GAP = 4;
 
-const ToolTip: React.FC<{
+type ToolTipProps = {
+  // hello
   children: ReactNode;
   popupContent: ReactNode;
-  theme?: (typeof ToolTipCVA.variantMap)["visual"][number];
-}> = ({ children, popupContent, theme }) => {
+} & RecipeVariantProps<typeof ToolTipCVA>;
+
+const ToolTip: React.FC<ToolTipProps> = ({
+  children,
+  popupContent,
+  visual,
+}: ToolTipProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const arrowRef = useRef(null);
 
@@ -71,7 +77,7 @@ const ToolTip: React.FC<{
       </span>
       {isOpen && (
         <div
-          className={ToolTipCVA({ visual: theme })}
+          className={ToolTipCVA({ visual: visual })}
           ref={refs.setFloating}
           style={floatingStyles}
           {...getFloatingProps()}
