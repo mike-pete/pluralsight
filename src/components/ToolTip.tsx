@@ -7,7 +7,7 @@ import {
   useInteractions,
 } from "@floating-ui/react";
 import { ReactNode, useRef, useState } from "react";
-import { css, cx } from "../../styled-system/css";
+import { css } from "../../styled-system/css";
 import { token } from "../../styled-system/tokens";
 
 const ToolTip: React.FC<{ children: ReactNode; popupContent: ReactNode }> = ({
@@ -42,16 +42,13 @@ const ToolTip: React.FC<{ children: ReactNode; popupContent: ReactNode }> = ({
       </span>
       {isOpen && (
         <div
-          className={cx(
-            css({
-              borderRadius: 4,
-              p: 8,
-              color: "neutral.text-inverse",
-              bg: "neutral.surface-inverse",
-              filter: "drop-shadow(0 0 2px rgba(0, 0, 0, 0.5))",
-            }),
-            "floating",
-          )}
+          className={css({
+            borderRadius: 4,
+            p: 8,
+            color: "neutral.text-inverse",
+            bg: "neutral.surface-inverse",
+            filter: "drop-shadow(0 0 2px rgba(0, 0, 0, 0.5))",
+          })}
           ref={refs.setFloating}
           style={floatingStyles}
           {...getFloatingProps()}
@@ -59,6 +56,7 @@ const ToolTip: React.FC<{ children: ReactNode; popupContent: ReactNode }> = ({
           <FloatingArrow
             ref={arrowRef}
             context={context}
+            height={ARROW_HEIGHT}
             fill={token("colors.neutral.surface-inverse")}
           />
           {popupContent}
