@@ -12,7 +12,6 @@
     "dev": {
       "name": "dev",
       "command": "npm run dev",
-      "runAtStart": true
     },
     "prepare": {
       "name": "prepare",
@@ -32,7 +31,11 @@
     },
     "storybook": {
       "name": "storybook",
-      "command": "npm run storybook"
+      "command": "npm run storybook",
+      "preview": {
+        "port": 6006
+      },
+      "runAtStart": true
     },
     "build-storybook": {
       "name": "build-storybook",
