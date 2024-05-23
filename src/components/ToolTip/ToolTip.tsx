@@ -9,7 +9,7 @@ import {
 import { ReactNode, useRef, useState } from "react";
 import { cva, RecipeVariantProps } from "../../../styled-system/css";
 
-const ToolTipCVA = cva({
+const TooltipCVA = cva({
   base: {
     display: "flex",
     gap: 10,
@@ -41,16 +41,16 @@ const ARROW_WIDTH = 12;
 const ARROW_HEIGHT = 6;
 const GAP = 4;
 
-type ToolTipProps = RecipeVariantProps<typeof ToolTipCVA> & {
+type TooltipProps = RecipeVariantProps<typeof TooltipCVA> & {
   children: ReactNode;
   popupContent: ReactNode;
 };
 
-const ToolTip: React.FC<ToolTipProps> = ({
+const Tooltip: React.FC<TooltipProps> = ({
   children,
   popupContent,
   visual,
-}: ToolTipProps) => {
+}: TooltipProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const arrowRef = useRef(null);
 
@@ -76,7 +76,7 @@ const ToolTip: React.FC<ToolTipProps> = ({
       </span>
       {isOpen && (
         <div
-          className={ToolTipCVA({ visual: visual })}
+          className={TooltipCVA({ visual: visual })}
           ref={refs.setFloating}
           style={floatingStyles}
           {...getFloatingProps()}
@@ -95,4 +95,4 @@ const ToolTip: React.FC<ToolTipProps> = ({
   );
 };
 
-export default ToolTip;
+export default Tooltip;

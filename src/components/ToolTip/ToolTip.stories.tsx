@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { css } from "../../../styled-system/css";
-import ToolTip from "./ToolTip";
+import Tooltip from "./Tooltip";
 
-const meta: Meta<typeof ToolTip> = {
-  title: "Example/ToolTip",
-  component: ToolTip,
+const meta: Meta<typeof Tooltip> = {
+  title: "Example/Tooltip",
+  component: Tooltip,
   parameters: {
     layout: "centered",
   },
