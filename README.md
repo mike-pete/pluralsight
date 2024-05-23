@@ -1,3 +1,20 @@
 Pluralsight take home
 
-[Ship Static CSS](https://panda-css.com/docs/guides/component-library#ship-a-static-css-file)
+Use the right version of Node:
+
+```bash
+nvm install
+nvm use
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Run Storybook
+
+```bash
+npm run storybook
+```
