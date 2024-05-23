@@ -6,26 +6,30 @@ const meta: Meta<typeof ToolTip> = {
   title: "Example/ToolTip",
   component: ToolTip,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
   argTypes: {
     children: {
+      description: "The content that will trigger the tooltip",
       control: {
         type: "text",
         defaultValue: "Hover over me!",
       },
     },
     popupContent: {
+      description: "The hoverable content of the tooltip",
       control: {
         type: "text",
         defaultValue: "This is a tooltip",
       },
     },
     visual: {
+      description: "The visual style of the tooltip",
+      type: "string",
       control: {
-        type: "radio",
-        options: ["barbie"],
+        type: "select",
       },
+      options: ["barbie", undefined],
       defaultValue: undefined,
     },
   },
@@ -37,22 +41,22 @@ const meta: Meta<typeof ToolTip> = {
       </div>
     ),
   ],
-}
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: "Hover over me!",
+    children: "Standard tooltip",
     popupContent: "This is a tooltip",
   },
 };
 
 export const Barbie: Story = {
-    args: {
-      children: "Hover over me!",
-      popupContent: "This is a tooltip",
-      visual: "barbie",
-    },
-  };
+  args: {
+    children: "Barbie tooltip",
+    popupContent: "This is a tooltip",
+    visual: "barbie",
+  },
+};

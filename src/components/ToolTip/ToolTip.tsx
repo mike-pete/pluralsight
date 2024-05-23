@@ -41,11 +41,10 @@ const ARROW_WIDTH = 12;
 const ARROW_HEIGHT = 6;
 const GAP = 4;
 
-type ToolTipProps = {
-  // hello
+type ToolTipProps = RecipeVariantProps<typeof ToolTipCVA> & {
   children: ReactNode;
   popupContent: ReactNode;
-} & RecipeVariantProps<typeof ToolTipCVA>;
+};
 
 const ToolTip: React.FC<ToolTipProps> = ({
   children,
